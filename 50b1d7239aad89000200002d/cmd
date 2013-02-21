@@ -1,1 +1,1 @@
-xd%s!|s<ret>xd%<a-s>\w+\d<ret>d1<a-space>4<a-space>i|<esc><space>I^(<esc>A).*$<esc>:wq<ret>
+%s!<ret>xd%<a-s>tx\w+<ret>d1<a-space>4<a-space>i|<esc>I^(<esc>A).*$<esc>:wq<ret>
