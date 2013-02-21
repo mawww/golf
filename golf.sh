@@ -7,9 +7,10 @@ count_keys() {
 
 for challenge in *; do
     if [[ -d ${challenge} ]]; then
+        challenge_url="http://vimgolf.com/challenges/${challenge}"
         cd ${challenge}
         if [[ !( -f in && -f out && -f cmd ) ]]; then
-           echo "Challenge ${challenge} FAILED (in, out or cmd file missing)"
+           echo "Challenge ${challenge_url} FAILED (in, out or cmd file missing)"
            cd ..
            continue
         fi
@@ -18,9 +19,9 @@ for challenge in *; do
         kak test -n -e "exec '$(<cmd)'; exec idid<space>not<space>quit<esc>; wq"
         key_count=$(count_keys "$(<cmd)")
         if cmp -s out test; then
-           echo "Challenge http://vimgolf.com/challenges/${challenge} OK ($key_count keys)"
+           echo "Challenge ${challenge_url} OK ($key_count keys)"
         else
-           echo "Challenge http://vimgolf.com/challenges/${challenge} FAIL ($key_count keys)"
+           echo "Challenge ${challenge_url} FAIL ($key_count keys)"
         fi
         cd ..
     fi
