@@ -1,7 +1,7 @@
 #!/bin/bash
 
 count_keys() {
-    str=$(echo "$1" | sed -r 's/<((c-.|a-.)|(c-|a-)?(space|ret|esc|up|down|left|right))>|./0/g')
+    str=$(echo "$1" | sed -r 's/<((c-.|a-.)|(c-|a-)?(ret|space|tab|lt|gt|backspace|esc|up|down|left|right|pageup|pagedown|home|end|backtab|del))>|./0/g')
     echo ${#str}
 }
 
