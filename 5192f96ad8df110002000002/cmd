@@ -1,1 +1,1 @@
-%s\w+<ret>a)<esc>i(<esc>:wq<ret>
+%S\s<ret>a)<esc>i(<esc>:wq<ret>
