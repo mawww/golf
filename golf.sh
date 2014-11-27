@@ -5,7 +5,13 @@ count_keys() {
     echo ${#str}
 }
 
-for challenge in *; do
+if [ $# -eq 0 ]; then
+    challenges=*
+else
+    challenges="$@"
+fi
+
+for challenge in ${challenges}; do
     if [[ -d ${challenge} ]]; then
         challenge_url="http://vimgolf.com/challenges/${challenge}"
         cd ${challenge}
