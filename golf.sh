@@ -22,7 +22,7 @@ for challenge in ${challenges}; do
         fi
 
         cp in test
-        kak test -n -e "exec '$(<cmd)'; exec idid<space>not<space>quit<esc>; wq"
+        kak test -n -e "exec '$(<cmd)'; exec i 'did not quit' <esc>; wq"
         key_count=$(count_keys "$(<cmd)")
         if cmp -s out test; then
            echo "Challenge ${challenge_url} OK ($key_count keys)"
