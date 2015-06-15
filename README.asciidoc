@@ -9,5 +9,5 @@ Each challenge directory contains a in, out and cmd file. in and out files
 are directly copied from vimgolf websites, the cmd file contains the keys
 used to solve the challenge.
 
-Keep in mind that Kakoune does not support ZZ, only :wq<ret> so challeges
-scores could easily be made 2 keys less.
+For ease of comparison, we use a special mapping ',q' for :wq<ret>, which mimics
+the vim ZZ binding.
