@@ -30,7 +30,7 @@ for challenge in ${challenges}; do
         fi
 
         cp in test
-        kak test -u -n -e "map global user q :wq<ret>; exec '$(cat cmd | sed -e s/\'/\\\\\'/g)'; exec i 'did not quit' <esc>; wq"
+        kak test -ui dummy -n -e "map global user q :wq<ret>; exec '$(cat cmd | sed -e s/\'/\\\\\'/g)'; exec i 'did not quit' <esc>; wq"
         key_count=$(count_keys "$(<cmd)")
         if [ -f vgscore ]; then
            vim_score=$(cat vgscore)
