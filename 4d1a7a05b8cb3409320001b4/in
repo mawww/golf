@@ -1,0 +1,54 @@
+<h1>What Vim Can Do</h1> 
+<p> 
+Vim is an advanced text editor that seeks to provide the power of
+the de-facto Unix editor 'Vi', with a more complete feature set.
+It's useful whether you're <a href='viusers.php'>already using vi</a> or <a
+href='others.php'>using a different editor</a>.  Users of Vim 5 and 6 should
+consider upgrading to Vim 7.  The main advantages of Vim 6 compared to Vim 5 
+can be found on <a href='vim5users.php'>this page</a>.
+</p> 
+ 
+<h1>A General Overview</h1> 
+ 
+<a href="http://tnerual.eriogerg.free.fr/0xBABAF000L/10_en.html"><img src='/images/0xbabaf000l.png' alt="Emaks-Vim-Notepad comic" width="800" height="254"></a> 
+Copyright (c) 2007 Laurent Gregoire
+ 
+<h4>What Is Vim?</h4> 
+<p> 
+Vim is a highly configurable text editor built to enable efficient text
+editing. It is an improved version of the vi editor distributed with
+most UNIX systems.  
+<p> 
+Vim is often called a "programmer's editor," and so useful for
+programming that many consider it an entire <abbr title='integrated
+development environment'>IDE</abbr>.  It's not just for programmers,
+though.  Vim is perfect for all kinds of text editing, from composing
+email to editing configuration files.
+</p> 
+<p> 
+Despite what the above comic suggests, Vim can be configured to work in a very
+simple (Notepad-like) way, called evim or Easy Vim.
+</p> 
+ 
+<h4>What Vim Is Not?</h4> 
+<p> 
+Vim isn't an editor designed to hold its users' hands.  It is a tool,
+the use of which must be learned.
+</p> 
+ 
+<p> 
+Vim isn't a word processor.  Although it can display text with various
+forms of highlighting and formatting, it isn't there to provide WYSIWYG
+editing of typeset documents.  (It is great for editing TeX, though.)
+</p> 
+ 
+<h4>Vim's License</h4> 
+<p> 
+Vim is charityware.  Its license is GPL-compatible, so it's
+distributed freely, but we ask that if you find it useful you make a
+donation to help children in Uganda through the
+<a href='http://iccf-holland.org/'>ICCF</a>.  The full license text can be
+found in the <a href='http://vimdoc.sourceforge.net/htmldoc/uganda.html#license'>documentation</a>.
+Much more information about charityware on
+<A HREF="http://Charityware.info/">Charityware.info</a>.
+</p> 
