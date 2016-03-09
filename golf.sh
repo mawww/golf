@@ -15,6 +15,10 @@ else
     challenges="$@"
 fi
 
+better=0
+same=0
+worse=0
+fail=0
 for challenge in ${challenges}; do
     if [[ -d ${challenge} ]]; then
         challenge_url="http://vimgolf.com/challenges/${challenge}"
@@ -37,15 +41,30 @@ for challenge in ${challenges}; do
         fi
         if cmp -s out test; then
             tag=OK
-            color=32
             if [ "$vim_score" -lt $key_count ]; then
                color=35
+               worse=$((worse+1))
+            elif [ "$vim_score" -eq $key_count ]; then
+               color=33
+               same=$((same+1))
+            else
+                color=32
+               better=$((better+1))
             fi
         else
             tag=FAIL
             color=31
+           fail=$((fail+1))
         fi
         echo "${challenge_url} $(color_seq $color)$tag$(color_seq 33) ($key_count keys$vim_text)$(color_seq 00)"
         cd ..
     fi
 done
+
+echo
+echo "-----------------------------"
+echo "$(color_seq 32)$better Better"
+echo "$(color_seq 33)$same Same"
+echo "$(color_seq 35)$worse Worse"
+echo "$(color_seq 31)$fail Fail$(color_seq 00)"
+echo "-----------------------------"
