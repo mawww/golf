@@ -24,10 +24,13 @@ for challenge in ${challenges}; do
         cp in test
         kak test -u -n -e "map global user q :wq<ret>; exec '$(cat cmd | sed -e s/\'/\\\\\'/g)'; exec i 'did not quit' <esc>; wq"
         key_count=$(count_keys "$(<cmd)")
+        if [ -e vgscore ]; then
+           vim_score=", vim $(cat vgscore))"
+        fi
         if cmp -s out test; then
-           echo "Challenge ${challenge_url} OK ($key_count keys)"
+           echo "Challenge ${challenge_url} OK ($key_count keys$vim_score)"
         else
-           echo "Challenge ${challenge_url} FAIL ($key_count keys)"
+           echo "Challenge ${challenge_url} FAIL ($key_count keys$vim_score)"
         fi
         cd ..
     fi
