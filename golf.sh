@@ -30,8 +30,9 @@ for challenge in ${challenges}; do
         fi
 
         cp in test
+        keys=$(cat cmd | sed -e "s/'/\\\\'/g")
         cmd="map global user q :wq<ret>
-             try %{ exec '$(cat cmd | sed -e s/\'/\\\\\'/g)' }
+             try 'exec \'$keys\''
              exec i 'did not quit' <esc>
              wq"
         kak test -ui dummy -n -e "$cmd"
