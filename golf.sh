@@ -25,12 +25,13 @@ for challenge in ${challenges}; do
         cd ${challenge}
         if [[ !( -f in && -f out && -f cmd ) ]]; then
            echo "${challenge_url} $(color_seq 31)FAIL$(color_seq 33) (in, out or cmd file missing)$(color_seq 00)"
+           fail=$((fail+1))
            cd ..
            continue
         fi
 
         cp in test
-        keys=$(cat cmd | sed -e "s/'/\\\\'/g")
+        keys=$(cat cmd | sed "s/'/\\\\\\\\'/g")
         cmd="map global user q :wq<ret>
              try 'exec \'$keys\''
              exec i 'did not quit' <esc>
