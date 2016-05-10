@@ -1,1 +1,1 @@
-~iList<lt><esc>wec><esc>h<a-h>yAnew<space>Array<esc>pA();<esc>jmS[0-9.]+<ret>cc.add(<esc>tca);<ret><esc><space>;Kd%s\(\d+\K\)<ret>id<esc>,q
+~iList<lt><esc>wec><esc>h<a-h>yAnew<space>Array<esc>pA();<esc>jmS[0-9.]+<ret>cc.add(<esc>tca);<ret><esc><space>;Kd%1s\(\d+(\))<ret>id<esc>,q
