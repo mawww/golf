@@ -32,7 +32,7 @@ for challenge in ${challenges}; do
 
         cp in test
         keys=$(cat cmd | sed "s/'/\\\\\\\\'/g")
-        cmd="map global user q :wq<ret>
+        cmd="map global user q ':write;kill<ret>'
              try 'exec \'$keys\''
              exec i 'did not quit' <esc>
              wq"
