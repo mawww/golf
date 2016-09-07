@@ -1,1 +1,1 @@
-%s,<ret>a<ret><esc>gg3Xs:<ret>&3nN&,q
+Qxs,<ret>a<ret><esc><a-x>s:<ret>&<esc><space>jq,q
