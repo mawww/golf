@@ -1,1 +1,1 @@
-~iList<lt><esc>wldr><a-h>yAnew<space>Array<c-r>"();<esc>lGeS[\d.]+<ret>c<ret>c.add(<esc>A);<esc>h<a-i>b<a-K>\.<ret>ad<esc><space>xd,q
+~iList<lt><esc>mc><esc><a-b>yAnew<space>Array<c-r>"();<esc>%s,<ret>Lc<ret><esc><a-C><a-&><a-x>Z<a-K>\.<ret>ad<a-;>z);<home>c.add(<esc><a-x>dm<a-x><a-R>,q
