@@ -11,3 +11,9 @@ used to solve the challenge.
 
 For ease of comparison, we use a special mapping ',q' for :wq<ret>, which mimics
 the vim ZZ binding.
+
+* The `golf.sh` script runs the challenges in current directory and display
+  results.
+* The `vgscore.sh` script retrieves the current top scores from vimgolf website,
+  run it first so that `golf.sh` can display a comparison.
+* The `vgdl.sh` script retrieves a challenge from the vimgolf.com website
