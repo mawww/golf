@@ -1,0 +1,6 @@
+function() {
+  var a = thing.index < other.attribute;
+  var b = thing.index < other.attribute;
+  var c = thing.attribute < other.index;
+  var d = thing.attribute < other.index;
+}

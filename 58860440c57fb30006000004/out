@@ -1,0 +1,6 @@
+<select>
+  <option value="volvo">Volvo</option>
+  <option value="aston_martin">Aston Martin</option>
+  <option value="audi">Audi</option>
+  <option value="alfa_romeo">Alfa Romeo</option>
+</select>

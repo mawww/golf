@@ -1,0 +1,6 @@
+function() {
+  var a = thing.get('index') < other.get('attribute');
+  var b = thing.get('index') < other.get('attribute');
+  var c = thing.get('attribute') < other.get('index');
+  var d = thing.get('attribute') < other.get('index');
+}
