@@ -31,11 +31,11 @@ for challenge in ${challenges}; do
         fi
 
         cp in test
-        keys=$(cat cmd | sed "s/'/\\\\\\\\'/g")
+        keys=$(cat cmd | sed "s/'/''''/g")
         cmd="map global user q ':write;kill<ret>'
-             try 'exec \'$keys\''
+             try 'exec -with-maps ''$keys'''
              exec i 'did not quit' <esc>
-             wq"
+             wq!"
         kak test -ui dummy -n -e "$cmd"
         key_count=$(count_keys "$(<cmd)")
         if [ -f vgscore ]; then

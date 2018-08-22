@@ -1,1 +1,1 @@
-Qxs,<ret>a<ret><esc><a-x>s:<ret>&<esc><space>jq,q
+QXs:<ret>Z1<a-space>hi<ret><esc>z&<esc><space>jq,q
