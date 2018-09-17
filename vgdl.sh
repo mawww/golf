@@ -8,7 +8,7 @@ fi
 challenge=${1}
 
 mkdir ${challenge}
-if curl http://vimgolf.com/challenges/${challenge}.json > ${challenge}/json; then
+if curl -L http://vimgolf.com/challenges/${challenge}.json > ${challenge}/json; then
     jq -rj '.in.data' < ${challenge}/json > ${challenge}/in
     jq -rj '.out.data' < ${challenge}/json > ${challenge}/out
     rm ${challenge}/json
