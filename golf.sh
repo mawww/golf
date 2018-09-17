@@ -1,8 +1,11 @@
 #!/bin/bash
 
+shopt -s extglob
+
 count_keys() {
-    str=$(echo "$1" | sed -r 's/<((c-.|a-.)|(c-|a-)?(ret|space|tab|lt|gt|backspace|esc|up|down|left|right|pageup|pagedown|home|end|backtab|del))>|./0/g')
-    echo ${#str}
+    local keys=$1
+    keys=${keys//<@([ca]-|)@(?|ret|space|tab|lt|gt|backspace|esc|up|down|left|right|pageup|pagedown|home|end|backtab|del)>/0}
+    echo ${#keys}
 }
 
 color_seq() {
@@ -23,7 +26,7 @@ for challenge in ${challenges}; do
     if [[ -d ${challenge} ]]; then
         challenge_url="http://vimgolf.com/challenges/${challenge}"
         cd ${challenge}
-        if [[ !( -f in && -f out && -f cmd ) ]]; then
+        if [[ ! -f in || ! -f out || ! -f cmd ]]; then
            echo "${challenge_url} $(color_seq 31)FAIL$(color_seq 33) (in, out or cmd file missing)$(color_seq 00)"
            fail=$((fail+1))
            cd ..
