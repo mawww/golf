@@ -16,12 +16,12 @@ if curl -L http://vimgolf.com/challenges/${challenge}.json > ${challenge}/json; 
 
 Start File:
 \`\`\`
-$(cat ${challenge}/in)
+$(cat ${challenge}/in |tr -d '\r')
 \`\`\`
 
 End File:
 \`\`\`
-$(cat ${challenge}/out)
+$(cat ${challenge}/out |tr -d '\r')
 \`\`\`
 
 EOF
