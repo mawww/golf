@@ -1,0 +1,17 @@
+#Everyday routine... :\ 
+
+amazing_func("Some amazing text", 123, variable) # Kittens
+
+def func():
+	return 'Stuff for making movement harder'
+
+def func2(m):
+	v = 0
+	for i in range(10):
+		v += i*m
+		print(v, i, m)
+
+very_strange_func(42, foobar, 'Another text') # Dogs
+
+test = func()
+func2(len(test))
