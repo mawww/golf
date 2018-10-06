@@ -1,0 +1,5 @@
+class Golfer
+  def self.hello(*a)
+    puts "Hello #{a.join(',')}"
+  end
+end
