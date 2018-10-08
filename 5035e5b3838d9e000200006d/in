@@ -1,0 +1,6 @@
+%tr
+  %td= raw("<%= line1_hello %>")
+  %td= raw("<%= line2(world) %>")
+  %td= raw("<%= line3_hello %>")
+  %td= raw("<%= line4 %>")
+  %td= raw("<%= line5_(world) %>")

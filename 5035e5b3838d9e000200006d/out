@@ -1,0 +1,7 @@
+<tr>
+  <td><%= line1_hello %></td>
+  <td><%= line2(world) %></td>
+  <td><%= line3_hello %></td>
+  <td><%= line4 %></td>
+  <td><%= line5_(world) %></td>
+</tr>
