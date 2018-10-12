@@ -1,0 +1,5 @@
+Assert.ThrowsAsync<Exception>(() => _auction.StartSellingItem());
+Assert.ThrowsAsync<Exception>(() => _application.StartBiddingIn(_auction));
+Assert.ThrowsAsync<Exception>(() => _auction.HasReceivedJoinRequestFromSniper());
+Assert.ThrowsAsync<Exception>(() => _auction.AnnounceClosed());
+Assert.ThrowsAsync<Exception>(() => _application.ShowsSniperHasLostAuction());

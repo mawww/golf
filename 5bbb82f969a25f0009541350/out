@@ -1,0 +1,5 @@
+_auction.StartSellingItem();
+_application.StartBiddingIn(_auction);
+_auction.HasReceivedJoinRequestFromSniper();
+_auction.AnnounceClosed();
+_application.ShowsSniperHasLostAuction();
