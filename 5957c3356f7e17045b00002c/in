@@ -1,0 +1,8 @@
+package main
+
+// FooXML mapping from XML to struct
+type FooXML struct {
+	Field1 string
+	Field2 string
+	Field3 string
+}

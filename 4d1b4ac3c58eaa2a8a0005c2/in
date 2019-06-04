@@ -1,0 +1,15 @@
+#!/usr/bin/env ruby
+
+class Klass
+  ITEMS = {
+    foo: ["bar", "baz"],
+    lorem: "ipsum",
+  }
+
+  def initialize(args)
+    @item = case args.first
+    when :foo, :bar: ITEMS[:foo][1]
+    when :lorem    : ITEMS[:lorem]
+    end
+  end
+end

@@ -1,0 +1,11 @@
+if("en_US".equals(lang)) {
+	System.out.println("The lang is en_US i.e english US"+
+}
+
+if("es_US".equals(lang)) {
+	System.out.println("The lang is es_US i.e spanish US"+
+}
+
+if("fr_US".equals(lang)) {
+	System.out.println("The lang is fr_US i.e france US"+
+}

@@ -1,0 +1,11 @@
+# Align these assignments
+
+x         = 1
+y         = true
+z         = 'you'
+foo       = 'bar'
+long_name = "long variable value"
+$p3cial   = ch4rs
+last      = line
+
+# Much better!

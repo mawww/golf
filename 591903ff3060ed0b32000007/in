@@ -1,0 +1,8 @@
+<div>
+    <span class="text-base text-dark wt-normal">
+        @icon('line-graph', 'icon-sm text-dark-faint m-r-4') ${{ number_format($product->totalRevenue() / 100) }}
+    </span>
+    <span class="text-base text-dark wt-normal">
+        @icon('users', 'icon-sm text-dark-faint m-r-4') {{ $product->totalPurchases() }}
+    </span>
+</div>

@@ -1,0 +1,28 @@
+pick 6348363 fix(options) Remove hunglish titles
+pick f80d2f6 fix(options) Style button focus state
+pick 0f4aab2 feat(options) Highlight user color fields on hover
+pick db11ec9 chore(build) Exclude applications key for chrome
+pick 0569d27 chore(build) Create task to set version on build
+pick 8e6ce65 fix(unlimited links) Add /treyblog to supported paths
+pick d9b3279 fix(manifest) Typo in key and extension id
+pick 3a2fb47 chore(build) Don't require hup.lh permissions
+pick c42d63c Bump version to 2.4.0
+
+# Rebase 87d11f5..c42d63c onto 87d11f5 (9 commands)
+#
+# Commands:
+# p, pick = use commit
+# r, reword = use commit, but edit the commit message
+# e, edit = use commit, but stop for amending
+# s, squash = use commit, but meld into previous commit
+# f, fixup = like "squash", but discard this commit's log message
+# x, exec = run command (the rest of the line) using shell
+# d, drop = remove commit
+#
+# These lines can be re-ordered; they are executed from top to bottom.
+#
+# If you remove a line here THAT COMMIT WILL BE LOST.
+#
+# However, if you remove everything, the rebase will be aborted.
+#
+# Note that empty commits are commented out

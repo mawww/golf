@@ -1,0 +1,15 @@
+#!/usr/bin/python
+import sys
+a = "Hello World!"
+sys.stdout.write(str(a[0]))
+sys.stdout.write(str(a[1]))
+sys.stdout.write(str(a[2]))
+sys.stdout.write(str(a[3]))
+sys.stdout.write(str(a[4]))
+sys.stdout.write(str(a[5]))
+sys.stdout.write(str(a[6]))
+sys.stdout.write(str(a[7]))
+sys.stdout.write(str(a[8]))
+sys.stdout.write(str(a[9]))
+sys.stdout.write(str(a[10]))
+sys.stdout.write(str(a[11]))

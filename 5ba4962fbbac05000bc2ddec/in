@@ -1,0 +1,4 @@
+newState.set('foo', foo);
+newState.set('bar', bar);
+newState.set('banana', banana);
+newState.set('bears', bears);

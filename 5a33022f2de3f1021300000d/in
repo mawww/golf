@@ -1,0 +1,6 @@
+$arr = [
+    'one_option' => '',
+    'other' => '',
+    'created_at' => '',
+    'updated_at' => ''
+]
