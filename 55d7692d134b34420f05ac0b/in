@@ -1,0 +1,8 @@
+function! FixLatexChars() 
+	execute '%s/\\/\\textbackslash{}/c'
+	execute '%s/#/\\#/c'
+	execute '%s/\$/\\$/c'
+	execute '%s/%/\\%/c'
+	execute '%s/&/\\&/c'
+	execute '%s/_/\\_/c'
+endfunction

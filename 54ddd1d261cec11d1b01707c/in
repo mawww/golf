@@ -1,0 +1,8 @@
+def this_method_should_be_active
+  here is happening something
+end
+
+def this_method_should_be_muted
+  here is not happening anything
+end
+

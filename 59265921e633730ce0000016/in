@@ -1,0 +1,7 @@
+These first three lines should
+be commented out with C-style
+inline comments.
+
+// These three lines should have
+// the C-style insline comment 
+// characters removed.

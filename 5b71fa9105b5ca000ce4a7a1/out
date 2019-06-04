@@ -1,0 +1,5 @@
+private String browser;
+private String browserVersion;
+private String os;
+private String osVersion;
+private String lang;

@@ -1,0 +1,1 @@
+J = J - y(i) * log(h) - (1 - y(i)) * log(1 - h) + (lambda / 2) * sumtheta2;

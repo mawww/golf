@@ -1,0 +1,7 @@
+RUN wget https://openresty.org/download/openresty-1.9.7.5.tar.gz && \
+    tar xzf openresty-1.9.7.5.tar.gz && \
+    cd openresty-1.9.7.5 && \
+    ./configure && \
+    make && \
+    make install && \
+    rm -rf /openresty*

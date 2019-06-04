@@ -1,0 +1,9 @@
+GET /contacts.html
+GET /news/news.html
+GET /download/windows/asctab31.zip
+GET /pics/wpaper.gif
+GET /asctortf/
+GET /pics/5star2000.gif
+GET /pics/5star.gif
+GET /pics/a2hlogo.jpg
+GET /cgi-bin/newcount?jafsof3&width=4&font=digital&noshow

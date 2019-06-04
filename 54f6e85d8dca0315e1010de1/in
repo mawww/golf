@@ -1,0 +1,2 @@
+window.nestedFormEvents.insertFields = (content, assoc, link) ->
+  console.log content, assoc, link

@@ -1,0 +1,4 @@
+state.foo = payload.foo;
+state.bar = payload.bar;
+state.banana = payload.banana;
+state.bears = payload.bears;
