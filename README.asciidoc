@@ -14,6 +14,8 @@ the vim ZZ binding.
 
 * The `golf.sh` script runs the challenges in current directory and display
   results.
+* The `play.sh` script tees up Kakoune for a play attempt and records the
+  keystrokes from the attempt.
 * The `vgscore.sh` script retrieves the current top scores from vimgolf website,
   run it first so that `golf.sh` can display a comparison.
 * The `vgdl.sh` script retrieves a challenge from the vimgolf.com website
