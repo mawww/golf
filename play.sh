@@ -79,7 +79,7 @@ else
   # this script and double quotes to allow evaluation of ${cmdfile} here.
   init='map global user q ":write;quit;kill<ret>"
         hook global RawKey .+ %{ outcmd %val{hook_param} }
-        define-command outcmd -params 1 %{ nop %sh{ echo -n ${kak_hook_param} '
+        define-command outcmd -params 1 %{ nop %sh{ echo -n "${kak_hook_param}" '
   init+=" >> ${cmdfile} } }"
 
   # Display the in, out, and (if it exists) cmd file
