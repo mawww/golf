@@ -26,7 +26,7 @@ confirm_in_path() {
 count_keys() (
   local keys=$1
   shopt -s extglob
-  keys=${keys//<@([ca]-|)@(?|ret|space|tab|lt|gt|backspace|esc|up|down|left|right|pageup|pagedown|home|end|backtab|del)>/0}
+  keys=${keys//<@([ca]-|)@(?|ret|space|tab|lt|gt|backspace|esc|up|down|left|right|pageup|pagedown|home|end|backtab|del|minus|plus)>/0}
   printf "${#keys}"
 )
 
