@@ -1,16 +1,6 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-shopt -s extglob
-
-count_keys() {
-    local keys=$1
-    keys=${keys//<@([ca]-|)@(?|ret|space|tab|lt|gt|backspace|esc|up|down|left|right|pageup|pagedown|home|end|backtab|del)>/0}
-    echo ${#keys}
-}
-
-color_seq() {
-    printf '\033[00;%sm' "$1"
-}
+source "$(dirname "$0")/golf_common.sh"
 
 if [ $# -eq 0 ]; then
     challenges=*
