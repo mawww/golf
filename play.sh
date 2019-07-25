@@ -112,8 +112,10 @@ else
   # Check to see if we have a successful try.
   $(cmp -s out ${tryfile})
   cmp_ex=$?
-  rm --force ${tryfile}
   if [[ ${cmp_ex} -eq 0 ]] ; then
+    # The try succeeded, so we can remove the try file.
+    rm --force ${tryfile}
+
     # Examine our keystrokes to cmd and compute score.
     key_count=$(count_keys "$(<${cmdfile})")
     key_text="${key_count} keys"
