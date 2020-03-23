@@ -1,0 +1,44 @@
+int WaterAdder::OnTimer(Universe u)
+{
+  const int MY_VAR_TYPE_ID = Universe::TYPE_ID_PLANETARY_SYSTEM;
+  Universe::Object MY_VAR_SUN_TEMPLATE;
+  this->InitializeTheSun(MY_VAR_SUN_TEMPLATE);
+
+  // auto & MY_VAR_BRIGHT_STAR = ptheir_->StarClass("G2V");
+  // Fails after some time passes in u:
+  // Assert(Universe::IsElement(MY_VAR_SUN_TEMPLATE, MY_VAR_BRIGHT_STAR));
+
+  // Just to doublecheck.
+  Assert(MY_VARIANT(ptheir_->OTHER_GUYS_VAR).IsEqual(MY_VAR_SUN_TEMPLATE));
+
+  // TODO: initialize MY_VAR_EARTH_TEMPLATE
+
+  Universe::TYPE_ID_INFO<MY_VAR_TYPE_ID>::Type MY_VAR_SOLAR_SYSTEM_TEMPLATE();
+  MY_VAR_SOLAR_SYSTEM_TEMPLATE.Add({MY_VAR_SUN_TEMPLATE,
+    ptheir_->THEIR_VAR_MERCURY, ptheir_->THEIR_VAR_VENUS,
+    MY_VAR_EARTH_TEMPLATE});
+
+  Universe::TYPE_ID_INFO<MY_VAR_TYPE_ID>::Type *MY_VAR_SOLAR_SYSTEM =
+    u.SearchByTemplate<MY_VAR_TYPE_ID>(MY_VAR_SOLAR_SYSTEM_TEMPLATE);
+  Assert(MY_VARIABLE_CHECK(MY_VAR_SOLAR_SYSTEM));
+  
+  auto & MY_VAR_SUN = MY_VAR_SOLAR_SYSTEM->GetStar(0);
+  auto MY_VAR_MASS = MY_VAR_SUN.GetMass();
+  auto MY_VAR_DIST = Universe::Quantity::Meters(MY_VAR_MASS.InKg() * 1e-20);
+  Universe::Quantity::VELOCITY_T::Type v;
+  Assert(GeneralRelativity::GetOrbitalVelocity(u, MY_VAR_MASS,
+    MY_VAR_DIST, &v));
+  auto MY_VAR_VELOCITY = vector4<Universe::Quantity::TYPE_SPEED::Type>::From3(
+    GeneralRelativity::c, rnd.UnitVector3() * v);
+  vector3 MY_VAR_POSITION = GeneralRelativity::RegularizedShift(u, 
+    MY_VAR_SUN.GetPos(), rnd.UnitVector3(), MY_VAR_DIST);
+  auto MY_VAR_WATER_MASS = std::max( MY_VAR_MASS * 4e-17,
+    Universe::Quantity::Kg(63311*1.0e9));
+
+  // Let the fun begin.
+  WaterAdder::AddWater(u, MY_VAR_WATER_MASS, MY_VAR_POSITION, MY_VAR_VELOCITY);
+
+  WaterAdder::SetTimer(Universe::Quantity::Second());
+}
+// TODO: Don't use long variable names like
+// MY_VAR_SOLAR_SYSTEM_TEMPLATE_CHECKER_FOR_WATER_ADDER
