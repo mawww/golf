@@ -1,0 +1,26 @@
+// Part 4: Contacting Sponsors
+
+const request = require('request');
+
+// Talking to sponsors
+let request_sponsorship = (company_name) => {
+  request(company_name + 'sponsorship_emails', (err, res, reply_body) => {
+    if(response.statusCode != 200){
+      console.log(`${company_name} couldn't sponsor us with error:`);
+      console.log(err);
+      return;
+    }
+    if(details_fuzzy(reply_body)){
+      team.coordinate_specifics();
+    }
+  });
+};
+
+let details_fuzzy = (reply) => {
+  if(reply.sponsorship_tier === null or
+     reply.reply_contract === 'not_signed' or
+     reply.deliverables === undefined){
+    return true;
+  }
+  return false;
+}
