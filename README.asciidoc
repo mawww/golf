@@ -17,3 +17,5 @@ the vim ZZ binding.
 * The `vgscore.sh` script retrieves the current top scores from vimgolf website,
   run it first so that `golf.sh` can display a comparison.
 * The `vgdl.sh` script retrieves a challenge from the vimgolf.com website
+* The `practice.sh` script takes the index of a challenge (as shown by ls), 
+  outputs the solution, and opens the input file in kakoune.
