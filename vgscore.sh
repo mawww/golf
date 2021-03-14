@@ -11,6 +11,6 @@ for challenge in ${challenges}; do
         echo "Reading vimgolf.com best score for ${challenge}"
         curl -s --header 'Accept: text/html,application/xhtml' \
              -L "http://www.vimgolf.com/challenges/${challenge}" |
-            kak -f '/<lt>h5<gt>Lead<ret>/<lt>b<gt><ret>ey%R' > ${challenge}/vgscore
+            kak -f '/<lt>h5<gt>Lead<ret>/\d+<lt>/a<gt><ret>s\d+<ret>y%R' > "${challenge}"/vgscore
     fi
 done
