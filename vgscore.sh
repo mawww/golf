@@ -10,7 +10,7 @@ for challenge in ${challenges}; do
     if [[ -d ${challenge} ]]; then
         echo "Reading vimgolf.com best score for ${challenge}"
         curl -s --header 'Accept: text/html,application/xhtml' \
-             -L "http://www.vimgolf.com/challenges/${challenge}" |
-            kak -f '/<lt>h5<gt>Lead<ret>/<lt>b<gt><ret>ey%R' > ${challenge}/vgscore
+            -L "http://www.vimgolf.com/challenges/${challenge}" |
+            kak -f '/Leaderboard<ret>/<lt>a href.*?<gt><ret>/\d+<ret>y%R' >${challenge}/vgscore
     fi
 done
