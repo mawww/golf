@@ -1,1 +1,1 @@
-ms\w+<ret>y%<a-d><a-P>i<ret>*|<end>|*<esc>ggd,q
+ms\w+<ret>y%<a-d><a-P>i<ret>*|<end>|*<esc>ggd<space>q
