@@ -1,0 +1,14 @@
+Rules
+
+1.Anyone can create a new challenge
+2.Creator of the challenge is also the moderator: can view/delete solutions
+3.Players can submit as many attempts as they want per challenge
+4.Entries are ranked by score (lowest wins), ties broken by time
+5.VimGolf initializes your Vim with a custom .vimrc - no custom modifications
+6.No plugins, predefined macros, etc, are allowed - level playing field
+7.Refrain from copy/paste, reading in the solution (:read), or using external tools
+8.Cheaters will be publicly ridiculed by fellow golfers :-)
+
+Note: We're definitely not trying to discourage Vim users from customizing their .vimrc's, defining useful macros or loading external plugins. Having said that, to have a fair competition, we need to level the playing field, and to do that, we're sticking to the basics.
+
+A Happy New Year 2018 !
