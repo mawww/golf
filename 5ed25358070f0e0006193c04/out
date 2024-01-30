@@ -1,0 +1,10 @@
+let getData (environment: Environment) (name: string) : string =
+  let options = DefaultOptions()
+  if environment.IsDevelopment() then
+    options.LocalCredentials <- true
+    options.Path <- "/stuff"
+  else
+    options.LocalCredentials <- false
+  let uri = Uri("https://example.com/" + name)
+  let client = GetClient(uri, options)
+  client.GetStuff(name)

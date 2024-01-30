@@ -1,0 +1,16 @@
+private static string GetData(Environment environment, string name)
+{
+  var options = new DefaultOptions();
+  if (environment.IsDevelopment())
+  {
+    options.LocalCredentials = true;
+    options.Path = "/stuff";
+  }
+  else
+  {
+    options.LocalCredentials = false;
+  }
+  var uri = new Uri("https://example.com/" + name);
+  var client = new GetClient(uri, options);
+  return client.GetStuff(name);
+}
