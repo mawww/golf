@@ -1,0 +1,1 @@
+%<a-s>I"<space><end>"<esc><a-,>i||<esc>,<a-C>bbdl.ic_part<esc>%Oc<c-n>:=10;<ret>execute<space>immediate<esc>%b<a-S><a-)><space>q

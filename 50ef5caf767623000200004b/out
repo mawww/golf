@@ -1,0 +1,18 @@
+c_part:=10;
+execute immediate
+" insert into tabtmp"||
+" (no_part,"||
+" deptname,"||
+" firtname,"||
+" lastname"||
+" )"||
+" select"||
+" no_part,"||
+" deptname,"||
+" firtname,"||
+" lastname"||
+" from"||
+" emp e,dept d"||
+" where e.no_part="||c_part||
+" and d.no_part="||c_part||
+" and e.deptno=d.deptno";

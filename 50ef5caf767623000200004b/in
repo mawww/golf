@@ -1,0 +1,16 @@
+insert into tabtmp
+(no_part,
+deptname,
+firtname,
+lastname
+)
+select
+no_part,
+deptname,
+firtname,
+lastname
+from
+emp e,dept d
+where e.no_part=10
+and d.no_part=10
+and e.deptno=d.deptno;
