@@ -1,0 +1,19 @@
+public enum State
+{
+  Active, Inactive
+}
+
+public struct Price
+{
+  public decimal Amount { get; set; }
+  public decimal Vat { get; set; }
+}
+
+public class Ticket
+{
+  public State State { get; set; }
+  public int Count { get; set; }
+  public Price Price { get; set; }
+  public DateTime DepartureDate { get; set; }
+  public DateTime? ReturnDate { get; set; }
+}

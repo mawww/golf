@@ -1,0 +1,14 @@
+type State = Active | Inactive
+
+type Price = {
+  amount: decimal
+  vat: decimal
+}
+
+type Ticket = {
+  state: State
+  count: int
+  price: Price
+  departureDate: DateTime
+  returnDate: DateTime option
+}
