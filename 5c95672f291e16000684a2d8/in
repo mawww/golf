@@ -1,0 +1,90 @@
+app0
+Duration: 15.132700ms
+
+app1
+Duration: 5346.12
+Duration: 5342.3
+Duration: 5614.1
+Duration: 5884.18
+Duration: 6082.06
+Duration: 6087.21
+Duration: 6140.46
+Duration: 6392.49
+Duration: 6484.61
+Duration: 6532.93
+Duration: 6488.43
+Duration: 6596.62
+Duration: 6650.43
+Duration: 6620.47
+Duration: 6740.71
+Duration: 6788.45
+Duration: 6888.99
+Duration: 6980.85
+Duration: 7032.83
+Duration: 7158.24
+
+app2
+Duration: 1593.513900ms
+Duration: 1627.548200ms
+Duration: 1730.158700ms
+Duration: 1875.952200ms
+Duration: 1994.924800ms
+Duration: 1991.495500ms
+Duration: 2033.253300ms
+Duration: 2037.780900ms
+Duration: 2100.084100ms
+Duration: 2219.649200ms
+Duration: 2254.433100ms
+Duration: 2315.607200ms
+Duration: 2341.889600ms
+Duration: 2360.516200ms
+Duration: 2455.441300ms
+Duration: 2475.084500ms
+Duration: 2467.874600ms
+Duration: 2493.176800ms
+Duration: 2620.560300ms
+Duration: 2643.711300ms
+
+app3
+Duration: 228674.570000ms
+Duration: 234573.058400ms
+Duration: 234685.368400ms
+Duration: 240430.919200ms
+Duration: 240449.140500ms
+Duration: 240464.735900ms
+Duration: 241006.109200ms
+Duration: 241266.764500ms
+Duration: 242687.977900ms
+Duration: 247221.387100ms
+Duration: 251116.524200ms
+Duration: 251368.006600ms
+Duration: 252059.346400ms
+Duration: 252683.261600ms
+Duration: 252686.836400ms
+Duration: 252821.560100ms
+Duration: 252967.342700ms
+Duration: 253142.340500ms
+Duration: 253627.178100ms
+Duration: 253641.482200ms
+
+app4
+Duration: 258235.929600ms
+Duration: 258292.169500ms
+Duration: 262354.157100ms
+Duration: 262716.808400ms
+Duration: 262769.102100ms
+Duration: 265074.881200ms
+Duration: 265207.596500ms
+Duration: 269306.980100ms
+Duration: 273817.034800ms
+Duration: 275188.636700ms
+Duration: 275542.901300ms
+Duration: 275956.272700ms
+Duration: 276682.766500ms
+Duration: 277628.021500ms
+Duration: 277992.577300ms
+Duration: 278193.831400ms
+Duration: 278586.871400ms
+Duration: 279097.451300ms
+Duration: 279445.274900ms
+Duration: 279500.901900ms
