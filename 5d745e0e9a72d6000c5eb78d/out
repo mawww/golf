@@ -1,0 +1,29 @@
+// Part 1: The Idea
+
+/* The following challenges will cover how Citizen Hacks was created. Good Luck!
+CH Part 1: The Idea
+CH Part 2: Assembling the Team
+CH Part 3: Finding Sponsors
+CH Part 4: Contacting Sponsors
+CH Part 5: Bad News
+CH Part 6: A New Hope
+CH Part 7: Applications
+CH Part 8: Handling Logistics
+CH Part 9: The Welcome Party
+*/
+
+const YEAR = 2018;
+const MONTH = 'June';
+
+let group = ['Marcel', 'Mio', 'Benn'];
+
+let add_member = (group, name) => {
+  group.push(name);
+  console.log(`Added ${name}`);
+};
+
+let add_members = (group, names) => {
+  names.forEach((name) => {
+    add_member(group, name);
+  });
+};
