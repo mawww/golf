@@ -1,0 +1,18 @@
+<root>
+  <row>
+    <alpha>mail</alpha>
+    <bravo>10000</bravo>
+  </row>
+  <row>
+    <alpha>male</alpha>
+    <bravo>10001</bravo>
+  </row>
+  <row>
+    <alpha>mayel</alpha>
+    <bravo>10002</bravo>
+  </row>
+  <row>
+    <alpha>mahel</alpha>
+    <bravo>10003</bravo>
+  </row>
+</root>
