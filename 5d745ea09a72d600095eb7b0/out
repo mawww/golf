@@ -1,0 +1,35 @@
+// Part 5: Bad News
+
+break;
+venue.secured = false;
+const time_left = "1 month";
+
+let decide_fate = (fate) => {
+  switch(fate){
+    case "carry_on":
+      team.drop_out_of_school();
+      team.get_new_job("Citizen_Hacks");
+      break;
+    case "cancel_event":
+      let broken_hearts = "all_of_them";
+      break;
+    case "postpone_event":
+      let broken_hearts = "all_of_them";
+      let hope = "beyond_the_horizon";
+      break;
+  }
+}
+
+decide_fate("postpone_event");
+
+/* Our Plan
+Month Jan: Study
+Month Feb: Study
+Month Mar: Study
+Month Apr: Study
+Month May: Plan
+Month Jun: Plan
+Month Jul: Plan
+Month Aug: Plan
+Month Sep: Cross Fingers
+*/
