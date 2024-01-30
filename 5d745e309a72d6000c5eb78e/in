@@ -1,0 +1,16 @@
+// Part 2: Assembling the Team
+
+// assembling friends
+let new_members = ['Daniel', 'Curtis', 'Michael']
+add_members(group, new_members)
+
+let fs = require('fs')
+let october_diary = JSON.parse(fs.readFileSync('October_2019.json', 'utf8'))
+
+october_diary['school'] = True
+october_diary['free_time'] = 'rip'
+october_diary['new_friends'] = ['Adam', 'Ahmed', 'Ethan', 'Hrithvik', 'Manvi', 'Sherwin', 'Atif', 'Nick', 'Audrey', 'Mirjana']
+add_members(group, october_diary.new_friends)
+
+let team = new CitizenHacks(group)
+team.publish_website()
