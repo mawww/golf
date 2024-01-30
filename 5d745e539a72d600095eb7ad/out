@@ -1,0 +1,26 @@
+// Part 3: Finding Sponsors
+
+let find_companies = (contacted_companies) => {
+  let new_companies = [];
+  let found = search_google(['Privacy Companies', 'Security', 'Encryption']);
+  found = found.concat(search_google_maps(['Toronto Tech Companies']));
+  found = found.concat(search_linkedin(['Old Friends', 'New Connections']));
+  found.forEach((company) => {
+    if(!contacted_companies.has(company)) new_companies.push(company);
+  });
+  return new_companies;
+}
+
+let current_date = new Date();
+let event_date = new Date(2018, 11, 23);
+let contacted_companies = new Set();
+
+while(current_date < event_date){
+  let companies = find_companies(contacted_companies);
+
+  // https://stackoverflow.com/questions/5915096/get-random-item-from-javascript-array
+  let selected_company = companies[Math.floor(Math.random()*companies.length)];
+
+  request_sponsorship(selected_company);
+  contacted_companies.add(selected_company);
+}
