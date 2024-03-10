@@ -1,0 +1,6 @@
+var some_function = function (arg1, arg2) {
+	var some_array = [1, 2, 3, 4, 'foo'];
+	for (var i in some_array) {
+		console.log(some_array, [(1 + (8 / 2)), 'hello (world)');
+	}
+};
