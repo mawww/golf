@@ -1,0 +1,3 @@
+  convert tabs to spaces
+    strip all blank lines
+  and remove any trailing spaces
