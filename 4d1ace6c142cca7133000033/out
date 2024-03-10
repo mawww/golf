@@ -1,0 +1,3 @@
+def fed(j):
+    n = 1234567890 + j
+    print('abc%ddef' % n)
