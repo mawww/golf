@@ -1,0 +1,14 @@
+class Rectangle(Blob):
+    """
+    According to PEP8: [P]lease limit all lines to a maximum of 79
+    characters. For flowing long blocks of text, limiting the length to
+    72 characters is recommended. 
+
+    This comment should have a max line width of 72. Note: (68 + 4
+    spaces for indent = 72)
+    """
+
+    # Below code should have a max line width of 79
+    def __init__(self, width, height, color='black', emphasis=None,
+                 highlight=0):
+        Blob.__init__(self, width, height, color, emphasis, highlight)
