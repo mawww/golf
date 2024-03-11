@@ -1,0 +1,6 @@
+from SimpleHTTPServer import SimpleHTTPRequestHandler
+from SocketServer import TCPServer
+
+ADDR = ("", 8080)
+httpd = # Finish this line
+httpd.serve_forever()
