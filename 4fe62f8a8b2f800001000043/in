@@ -1,0 +1,5 @@
+$atres = sqlStatement("select f.name,f.street,f.city,f.state,f.postal_code from facility f " .
+  " left join users u on f.id=u.facility_id " .
+  " left join  billing b on b.provider_id=u.id and b.pid = '".$stmt['pid']."' " .
+  " where  service_location=1");
+$row = sqlFetchArray($atres);
