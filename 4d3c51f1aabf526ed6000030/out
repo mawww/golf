@@ -1,0 +1,5 @@
+%html
+  %head
+    %title Vim Rocks!
+  %body
+    %h1 So does Haml
