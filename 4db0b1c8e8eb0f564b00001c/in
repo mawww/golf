@@ -1,0 +1,10 @@
+function Human() {
+
+}
+
+Human.prototype = {
+	humanStuff: function(){},
+	doHumanStuff: function() {
+		useDigitalWatch();
+	}
+}

@@ -1,0 +1,11 @@
+function Dog() {
+
+}
+
+Dog.prototype = {
+	dogStuff: function(){},
+	doDogStuff: function() {
+		useDigitalWatch();
+	}
+}
+
