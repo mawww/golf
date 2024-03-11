@@ -1,0 +1,78 @@
+body {
+	background: #d47300 url(/wp-content/themes/black/graphics/noise.png);	
+	font-family: 'Open Sans', sans-serif;
+}
+
+
+.background {
+	background: url(/wp-content/themes/black/images/background_shadow.png) no-repeat top center;
+	background-position: 50% 16%;	
+}
+
+.background_overlay {
+	background: url(/wp-content/themes/black/images/background_overlay.png) no-repeat top center;
+	padding: 0;
+	margin:0;
+}
+
+
+.order {
+	background: #ff9e00 url(/wp-content/themes/black/graphics/order.png) repeat-x;
+	height: 25px;
+	display: inline-block;
+	color: #d47300;
+	line-height: 25px;
+	font-weight: 700;
+	font-size: 13px;
+	font-weight: 800;
+	padding: 0 10px;
+	-webkit-border-radius: 20px;
+	-moz-border-radius: 20px;
+	box-shadow: 0 0 0px 5px rgba(0,0,0,0.10);	
+	margin-right: 20px;
+	text-transform: uppercase;
+	color: #825600;
+	text-shadow: 0px 1px 0px rgba(255,255,255,0.50);
+}
+
+.sponsor:hover {
+	background-position: 0px -25px;
+}
+
+.sponsor:active {
+	background: #ff9e00 url(/wp-content/themes/black/images/sponsors/sponsorBlock.png) repeat-x;
+	background-position: 0px -50px;
+}
+
+
+.telephone {
+	background: #fff url(/wp-content/themes/black/graphics/telephone.png) repeat-x;
+	height: 25px;
+	display: inline-block;
+	color: #A65A01;
+	line-height: 25px;
+	font-weight: 700;
+	font-size: 14px;
+	padding: 0 10px;
+	-webkit-border-radius: 20px;
+	-moz-border-radius: 20px;
+	box-shadow: 0 0 0px 5px rgba(0,0,0,0.10);	
+	margin-right: 20px;
+	text-shadow: 0px 1px 0px rgba(255,255,255,0.50);
+}
+
+
+.social {
+	background: #fff url(/wp-content/themes/black/social/telephone.png) repeat-x;
+	display: inline-block;
+	height: 25px;
+	line-height: 25px;
+	padding: 0 10px;
+	color: #A65A01;
+	font-weight: 700;
+	font-size: 14px;
+	-webkit-border-radius: 20px;
+	-moz-border-radius: 20px;
+	box-shadow: 0 0 0px 5px rgba(0,0,0,0.10);	
+	margin-right: 20px;
+}
