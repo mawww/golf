@@ -1,0 +1,3 @@
+mystring = "This quoted string contains ' and used to be"
+           "surrounded with ' characters.  It is also"
+           "a multiline string too"
