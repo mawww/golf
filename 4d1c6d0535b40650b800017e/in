@@ -1,0 +1,13 @@
+int main()
+{
+  char *s = "Hello, world!";
+  int i, j;
+
+  for (i = 0; s[i]; i++) {
+    for (j = 0; j <= i; j++)
+      putchar(s[j]);
+    putchar('\n');
+  }
+
+  return 0;
+}
