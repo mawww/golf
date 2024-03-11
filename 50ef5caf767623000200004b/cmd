@@ -1,1 +1,1 @@
-%<a-s>I"<space><end>"<esc><a-,>i||<esc>,<a-C>bbdl.ic_part<esc>%Oc<c-n>:=10;<ret>execute<space>immediate<esc>%b<a-S><a-)><space>q
+%H<a-s><a-S>i"<home><right><space><up><end>||<esc>,<a-C>bbc<right>||c_part<esc>%Oc<c-n>:=10;<ret>execute<space>immediate<esc><space>q
