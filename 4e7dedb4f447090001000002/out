@@ -1,0 +1,35 @@
+## _controls.html.erb
+<div class='controls'>
+	<%= event_controls event %>
+</div>
+
+## event_helper.rb
+module EventHelper
+	def event_controls(event)
+		if event.author == current_user
+			author_controls(event)
+		elsif current_user.attending? event
+			attendee_controls(event)
+		elsif current_user.invited_to? event
+			invitee_controls(event)
+		else
+			public_controls(event)
+		end
+	end
+
+	def author_controls(event)
+		link_to "Edit Activity", edit_event_path(event), :class => 'button'
+	end
+
+	def attendee_controls(event)
+		link_to "Leave", leave_event_path(event), :class => "button neg", :method => :post
+	end
+
+	def invitee_controls(event)
+		link_to "Accept Invite", join_event_path(event), :class => "button pos", :method => :post
+	end
+
+	def public_controls(event)
+		link_to "I'm Going", join_event_path(event), :class => "button pos", :method => :post
+	end
+end

@@ -1,0 +1,20 @@
+## _controls.html.erb
+<div class='controls'>
+	<% if event.author == current_user -%>
+		<%= link_to "Edit Activity", edit_event_path(event), :class => 'button' %>
+	<% else -%>
+		<% if current_user.attending? event -%>
+			<%= link_to "Leave", leave_event_path(event), :class => "button neg", :method => :post %>
+		<% else -%>
+			<% if current_user.invited_to? event -%>
+				<%= link_to "Accept Invite", join_event_path(event), :class => "button pos", :method => :post %>
+			<% else -%>
+				<%= link_to "I'm Going", join_event_path(event), :class => "button pos", :method => :post %>
+			<% end -%>
+		<% end -%>
+	<% end -%>
+</div>
+
+## event_helper.rb
+module EventHelper
+end
