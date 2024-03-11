@@ -1,0 +1,4 @@
+tmp = []
+for x in xrange(10):
+    tmp.append(x**2)
+print tmp
