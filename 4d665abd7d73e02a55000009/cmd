@@ -1,1 +1,1 @@
-~iList<lt><esc>mc><esc><a-b>yAnew<space>Array<c-r>"();<esc>yms,<ret>LR<a-&><a-h>C<a-K>\.<ret>Ad<a-;><c-o>c.add(<end>);<esc>m<a-S>xd<space>q
+~iList<lt><esc>mc><esc><a-b>yAnew<space>Array<c-r>"();<esc>yms,.<ret>ZR<a-&>B<a-x>Ad<esc>z<a-C>ic.add(<end>);<esc>m<a-S>xd<space>q
