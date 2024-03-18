@@ -13,8 +13,8 @@ this as well]. The link:vgdl.sh[] script here does the same when downloading
 data from VimGolf: CRLF line endings are converted to LF, and if the last line
 lacks LF it gets added. Otherwise, such challenges would be unsolvable by
 Kakoune. While Vim has means of controlling its behaviour in respect to the
-last line termination (`:se fixeol` starting from version 7.4.785, and `:se
-bin` before that), Kakoune always terminates the unterminated last line on
+last line termination (`:se fixeol` starting from version 7.4.785, and `:se bin`
+before that), Kakoune always terminates the unterminated last line on
 save. Note that properly terminated data can be handled by Kakoune even if they
 are terminated with CRLF. The script converts them as well only for the sake of
 simplicity.
@@ -81,11 +81,11 @@ https://www.vimgolf.com/challenges/9v00612800cb000000000210[Reordering Lorem
 Ipsum]. The strangest and the most troublesome challenge of them all.
 Differently to challenges above, this one is properly terminated. Was the
 challenge author expecting `:se ff=unix<CR>` as part of the solution? That
-would be `:set buffer eolformat lf<ret>` in Kakoune (or, using completion `:set
-<tab> e<tab> lf<ret>)`. The challenge description is silent about this. And the
-challenge is problematic in other ways as well, so I'm not going to provide a
-solution anyway. In case somebody would like to solve it, we could adjust the
-data manually like what was previously done with
+would be `:set buffer eolformat lf<ret>` in Kakoune (or, using completion
+`:set <tab> e<tab> lf<ret>)`. The challenge description is silent about this.
+And the challenge is problematic in other ways as well, so I'm not going to
+provide a solution anyway. In case somebody would like to solve it, we could
+adjust the data manually like what was previously done with
 https://www.vimgolf.com/challenges/5d745e799a72d600095eb7af[citizen_hacks_2019_part4].
 I also strongly suspect that whatever the challenge author was planning could
 not be realized as VimGolf clients would convert the data on the fly as well.
