@@ -3,17 +3,17 @@ Kakoune vimgolf challenges
 
 Here are some vimgolf challenges along with their Kakoune solutions.
 
-Theses benchmark serves as regressions tests and as a comparison against vim.
+These benchmarks serve as regressions tests and as a comparison against vim.
 
-Each challenge directory contains a in, out and cmd file. in and out files
-are directly copied from vimgolf websites, the cmd file contains the keys
+Each challenge directory contains am in-, out- and cmd-file. In- and out-files
+are directly copied from vimgolf websites, the cmd-file contains the keys
 used to solve the challenge.
 
 For ease of comparison, we use a special mapping ',q' for :wq<ret>, which mimics
 the vim ZZ binding.
 
-* The `golf.sh` script runs the challenges in current directory and display
+* The `golf.sh` script runs the challenges in current directory and displays
   results.
-* The `vgscore.sh` script retrieves the current top scores from vimgolf website,
-  run it first so that `golf.sh` can display a comparison.
+* The `vgscore.sh` script retrieves the current top scores from the vimgolf website.
+  Run it first so that `golf.sh` can display a comparison.
 * The `vgdl.sh` script retrieves a challenge from the vimgolf.com website
