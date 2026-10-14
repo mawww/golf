@@ -1,42 +1,48 @@
 = Handling of data with an unterminated last line
 
-Some of the challenges on https://www.vimgolf.com[VimGolf] include input/output
-data where the last line is not terminated with the newline character (LF on
-Unix-like systems, CRLF on Windows). Such data go against POSIX, so are
-uncommon on Linux, *BSD and macOS, which generally follow the POSIX standard.
-Looks like the unofficial Python VimGolf client
-https://github.com/dstein64/vimgolf/blob/master/vimgolf/vimgolf.py#L202[converts]
-all such non-standard line endings to POSIX. And I have a hunch that the
-official Ruby client probably
-https://github.com/igrigorik/vimgolf/blob/master/lib/vimgolf/lib/vimgolf/challenge.rb#L61[does
-this as well]. The link:vgdl.sh[] script here does the same when downloading
-data from VimGolf: CRLF line endings are converted to LF, and if the last line
-lacks LF it gets added. Otherwise, such challenges would be unsolvable by
-Kakoune. While Vim has means of controlling its behaviour in respect to the
-last line termination (`:se fixeol` starting from version 7.4.785, and `:se bin`
-before that), Kakoune always terminates the unterminated last line on
-save. Note that properly terminated data can be handled by Kakoune even if they
-are terminated with CRLF. The script converts them as well only for the sake of
-simplicity.
+Some challenges on https://www.vimgolf.com[VimGolf] include input/output
+data where the last line is not terminated with a newline character (LF on
+Unix-like systems, CRLF on Windows). Such data go against POSIX, so they are
+uncommon on Linux, *BSD, and macOS, which generally follow the POSIX standard.
+The unofficial Python VimGolf client appears to
+https://github.com/dstein64/vimgolf/blob/master/vimgolf/vimgolf.py#L202[convert]
+all such non-standard line endings to POSIX. I suspect the official Ruby client
+does the same, as seen
+https://github.com/igrigorik/vimgolf/blob/master/lib/vimgolf/lib/vimgolf/challenge.rb#L61[here].
+The link:vgdl.sh[] script performs the same conversion when downloading data
+from VimGolf: it converts CRLF line endings to LF and adds a final LF if
+missing. Previously, this conversion was necessary for those challenges to be
+solvable by Kakoune at all. While Vim has long had means to control its
+behaviour regarding last-line termination (with `:se fixeol` starting in
+version 7.4.785, and `:se bin` before that), Kakoune before version 2026.04.12
+always terminated the last line on save. Note that properly terminated data
+with CRLF endings could already be handled by Kakoune; the script converts them
+as well purely for simplicity.
+
+Starting with version 2026.04.12, Kakoune adds the `finaleol` option, allowing
+it to write files without a final newline. It now preserves the line-ending
+convention of the input data on save. This somewhat reduces the need for the
+conversion described above.
 
 == Implications
 This conversion affects a number of challenges. They can be classified as
 follows.
 
 === Every line including the last one ends with CRLF
-E.g. https://www.vimgolf.com/challenges/5fe3ddcb8a967b00099d7e59[RUST HTML to
-maud]. As said above, strictly speaking such data don't have to be converted.
-But converting them won't change anything either. Any given Kakoune solution
+For example,
+https://www.vimgolf.com/challenges/5fe3ddcb8a967b00099d7e59[RUST HTML to maud].
+As mentioned above, strictly speaking such data do not need to be converted.
+However, converting them will not change anything either. Any Kakoune solution
 would work with the data both before and after conversion.
 
 === Every line but the last one ends with CRLF
-Most affected challenges are in this category. The data probably originated on
-Windows. The conversion makes them solvable by Kakoune, but otherwise they stay
-the same.
+Most affected challenges fall into this category. The data likely originated on
+Windows. With current Kakoune, these challenges are solvable even without the
+conversion; the conversion just normalizes the data to a consistent format.
 
 === Input and output data are just one line, unterminated
-Probably originate on Windows as well. A degenerate case of the previous
-category. E.g.
+These likely also originate on Windows. This is a degenerate case of the
+previous category. For example:
 https://www.vimgolf.com/challenges/4d1a4f2ba860b744720000bf[Flodder-challenge],
 https://www.vimgolf.com/challenges/544bcdd93cafc700021ee30e[learn vim in short
 time], https://www.vimgolf.com/challenges/9v00647402cb000000000251[Surround z].
@@ -44,48 +50,56 @@ time], https://www.vimgolf.com/challenges/9v00647402cb000000000251[Surround z].
 === CR is significant as part of the challenge
 There is one such challenge,
 https://www.vimgolf.com/challenges/5301e83c0cb38c0002000008[Carriage return].
-Luckily, those significant CR characters are never at the end of line, so they
-are preserved by the conversion. Another challenge,
+Fortunately, those significant CR characters are never at the end of a line, so
+they are preserved by the conversion. Another challenge,
 https://www.vimgolf.com/challenges/54bd44d755bd48000310c6e0[Greek column
-realign], has CR in a comment that won't get touched by any solution. Removing
-it won't affect anything. Besides, the said comment is addressed to Vim users
-and not relevant to Kakoune.
+realign], contains a CR character in a comment that no solution would modify.
+Removing it won't affect anything. Moreover, that comment is directed at Vim
+users and is not relevant to Kakoune.
 
 === Unix-style; in: terminated, out: unterminated
 One challenge,
 https://www.vimgolf.com/challenges/54a480bb5db1600002939b54[increment by column
-in XML]. Did the challenge author expect the terminating NL character to be
-explicitly removed from the last line? What for? Anyway, whatever the author
-was thinking, their thought didn't brought fruits as VimGolf clients seem to
-perform a similar conversion. A related case is
+in XML]. Did the challenge author intend for the terminating newline character
+to be explicitly removed from the last line? For what purpose? In any case,
+whatever the author intended, their idea did not bear fruit, as VimGolf clients
+seem to perform a similar conversion. A related case is
 https://www.vimgolf.com/challenges/59e19a18396b000053000013[Converting group
-lines from format A to Format B], only that there the conversion cannot
+lines from format A to Format B], except that there the conversion cannot
 possibly affect the score.
+
+=== Unix-style; in: unterminated, out: terminated
+There is one challenge like this,
+https://vimgolf.com/challenges/5a33022f2de3f1021300000d[Array propagate]. Such
+challenges were handled transparently by older Kakoune versions, because they
+automatically added a final newline on save. With the current version, which
+preserves the input's line-ending convention, they now require the conversion
+to produce the desired terminated output.
 
 === Unix-style; in: unterminated, out: unterminated
 All the Citizen Hacks '19 challenges plus
 https://www.vimgolf.com/challenges/5ed1805d1e2d61000670078f[C# data class to F#
 record] and https://www.vimgolf.com/challenges/5ed25358070f0e0006193c04[C#
-function to F#]. No idea how such data came about. Were they originating on
-Windows, then sloppily converted to Unix format? I.e. stripped of CR
-characters, but the last line left unterminated? Anyway, I don't see how any
-solution to them could be possibly affected by this conversion.
+function to F#]. It's unclear how such data came to be. Were they originally
+from Windows and then carelessly converted to Unix format? That is, stripped of
+CR characters but leaving the last line unterminated? In any case, I don't see
+how any solution to these challenges could be affected by this conversion.
 
 === In: one line, unterminated. Out: multi-line, Unix-style, last line unterminated
 There is only one challenge like this,
 https://www.vimgolf.com/challenges/5123331bb2bc340002000003[Fibonacci
-Trangles]. Probably, a degenerate case of the previous category.
+Trangles]. This is likely a degenerate case of the previous category.
 
 === In: DOS-style, terminated; out: Unix-style, terminated
 https://www.vimgolf.com/challenges/9v00612800cb000000000210[Reordering Lorem
-Ipsum]. The strangest and the most troublesome challenge of them all.
-Differently to challenges above, this one is properly terminated. Was the
-challenge author expecting `:se ff=unix<CR>` as part of the solution? That
-would be `:set buffer eolformat lf<ret>` in Kakoune (or, using completion
-`:set <tab> e<tab> lf<ret>)`. The challenge description is silent about this.
-And the challenge is problematic in other ways as well, so I'm not going to
-provide a solution anyway. In case somebody would like to solve it, we could
-adjust the data manually like what was previously done with
+Ipsum]. The strangest and most troublesome challenge of all. Unlike the
+challenges above, this one is properly terminated. Was the challenge author
+expecting `:se ff=unix<CR>` as part of the solution? That would be
+`:set buffer eolformat lf<ret>` in Kakoune (or, using completion
+`:set <tab> e<tab> lf<ret>`). The challenge description says nothing about this.
+The challenge is also problematic in other ways, so I won't provide a solution
+for it. If somebody wants to solve it, we could adjust the data manually, as was
+previously done with
 https://www.vimgolf.com/challenges/5d745e799a72d600095eb7af[citizen_hacks_2019_part4].
-I also strongly suspect that whatever the challenge author was planning could
-not be realized as VimGolf clients would convert the data on the fly as well.
+I also strongly suspect that whatever the challenge author planned could not be
+realized, because VimGolf clients would convert the data on the fly as well.
